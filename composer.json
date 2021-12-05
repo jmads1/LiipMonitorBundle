@@ -50,7 +50,7 @@
         "symfony/expression-language": "To use the Expression check"
     },
     "autoload": {
-        "psr-4": { "Liip\\MonitorBundle\\": "" }
+        "psr-4": { "jmads1\\MonitorBundle\\": "" }
     },
     "extra": {
         "branch-alias": {
