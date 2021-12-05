@@ -1,5 +1,5 @@
 {
-    "name": "liip/monitor-bundle",
+    "name": "jmads1/monitor-bundle",
     "type": "symfony-bundle",
     "description": "Liip Monitor Bundle",
     "keywords": ["monitoring", "monitor", "check", "health"],
@@ -19,12 +19,12 @@
         },
         {
             "name": "Symfony Community",
-            "homepage": "https://github.com/liip/LiipMonitorBundle/contributors"
+            "homepage": "https://github.com/jmads1/LiipMonitorBundle/contributors"
         }
     ],
     "require": {
         "php": "^7.2 || ^8.0",
-        "symfony/framework-bundle": "^4.4 || ^5.0",
+        "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0",
         "laminas/laminas-diagnostics": "^1.5"
     },
     "require-dev": {
