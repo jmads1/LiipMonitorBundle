@@ -58,7 +58,9 @@ class HealthCheckController
         include $this->template;
         $content = ob_get_clean();
 
-        return new Response($content, 200, ['Content-Type' => 'text/html']);
+        $response = new Response($content, 200, ['Content-Type' => 'text/html']);
+        $response->headers->set('Cache-Control', 'no-store');
+        return $response;
     }
 
     /**
@@ -123,10 +125,12 @@ class HealthCheckController
     {
         $report = $this->runTests($request);
 
-        return new Response(
+        $response = new Response(
             '',
             (ArrayReporter::STATUS_OK === $report->getGlobalStatus() ? 200 : $this->failureStatusCode)
         );
+        $response->headers->set('Cache-Control', 'no-store');
+        return $response;
     }
 
     /**
@@ -138,10 +142,12 @@ class HealthCheckController
     {
         $report = $this->runTests($request, $checkId);
 
-        return new Response(
+        $response = new Response(
             '',
             (ArrayReporter::STATUS_OK === $report->getGlobalStatus() ? 200 : $this->failureStatusCode)
         );
+        $response->headers->set('Cache-Control', 'no-store');
+        return $response;
     }
 
     /**
